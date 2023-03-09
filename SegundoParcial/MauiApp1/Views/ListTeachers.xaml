@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Views.ListTeachers"
+             xmlns:te="clr-namespace:MauiApp1.Views.Template"
+             xmlns:vm="clr-namespace:MauiApp1.ViewModel"
+             xmlns:mo="clr-namespace:MauiApp1.Models"
+             Title="ListTeachers">
+
+    <HorizontalStackLayout x:DataType="vm:TeacherViewModel">
+        <Button Text="Mostrar maestros" Command="{Binding ListTeachersCommand}"/>
+        <CollectionView ItemsSource="{Binding Teachers}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <te:ItemTeacherPage/>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </HorizontalStackLayout>
+</ContentPage>
